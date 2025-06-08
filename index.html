@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>감정 기반 플레이리스트</title>
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    .emotion-menu {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .emotion-btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      background-color: #e0e0e0;
+      transition: 0.3s;
+    }
+    .emotion-btn:hover {
+      background-color: #ccc;
+    }
+    .playlist {
+      display: none;
+      padding: 1rem 2rem;
+    }
+    .playlist.active {
+      display: block;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #555;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>오늘 너의 기분은?</h1>
+  </header>
+
+  <div class="emotion-menu">
+    <button class="emotion-btn" onclick="showPlaylist('happy')">😃 신나고 싶을 때</button>
+    <button class="emotion-btn" onclick="showPlaylist('love')">💕 짝사랑할 때</button>
+    <button class="emotion-btn" onclick="showPlaylist('sad')">😢 울적할 때</button>
+  </div>
+
+  <div id="happy" class="playlist">
+    <h2>😃 신나고 싶을 때</h2>
+    <ul>
+      <li>Day6 - Dancedance</li>
+      <li>Day6 - Best Part</li>
+      <li>Day6 - Free하게</li>
+      <li>Chrissy Costanza - Hero too</li>
+      <li>YoungK - Strange</li>
+      <li>YoungK - Let it be summer</li>
+      <li>Mrs. Green Apple - ダンスホール</li>
+      <li>Xdinary Heroes - Happy Deathday</li>
+      <li>Xdinary Heroes - Sucker Punch!</li>
+      <li>오월오일 - Tree</li>
+      <li>Vaundy - まぶた</li>
+      <li>Lenny Code Fiction - Make My Story</li>
+      <li>Super Beaver - ヒタムキ</li>
+    </ul>
+  </div>
+
+  <div id="love" class="playlist">
+    <h2>💕 짝사랑할 때</h2>
+    <ul>
+      <li>Day6 - 좋은 걸 뭐 어떡해</li>
+      <li>Day6 - 그녀가 웃었다</li>
+      <li>Day6 - 그렇더라고요</li>
+      <li>Day6 - 좋아합니다</li>
+      <li>Day6 - 메이플라떼</li>
+      <li>Day6 - 돌아갈래요</li>
+      <li>Day6 - How to love</li>
+      <li>Day6 - 태양처럼</li>
+      <li>Day6 - 사랑하게 해주라</li>
+      <li>Day6 - 아직 거기 살아</li>
+      <li>Day6 - 도와줘요 Rock&Roll</li>
+      <li>라쿠나 - Montauk</li>
+      <li>Official髭男dism - Pretender</li>
+      <li>Xdinary Heroes - Again? Again!</li>
+    </ul>
+  </div>
+
+  <div id="sad" class="playlist">
+    <h2>😢 울적할 때</h2>
+    <ul>
+      <li>Eve - 僕らの</li>
+      <li>Omoinotake - つぼみ</li>
+      <li>Xdinary Heroes - Walking to the Moon</li>
+      <li>Tani Yuuki - もう一度</li>
+      <li>윤도현밴드 - 흰수염고래</li>
+      <li>Vaundy - benefits</li>
+      <li>Vaundy - 裸の勇者</li>
+      <li>Vaundy - しわあわせ</li>
+      <li>sumika - Higher Ground</li>
+      <li>菅田将暉 - ロングホープ・フィリア</li>
+      <li>Day6 - Maybe Tomorrow</li>
+    </ul>
+  </div>
+
+  <script>
+    function showPlaylist(id) {
+      document.querySelectorAll('.playlist').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
